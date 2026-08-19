@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c3e50">
+
+    <!--APPLE-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="description" content="Aplicativo PWA para gerenciamento de patrimônio">
+    <title>Gerenciador de patrimônio</title>
+
+    <link rel="icon" href="icone.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icone.png">
+    <link rel="stylesheet" href="styles.css">
+    
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Controle de patrimônio</h1>
+            <button id="installBtn" class="btn install-btn" hidden>Instalar</button>
+        </header>
+
+        <section id="botaoNovoPatrimonioSection" class="section">
+            <button type="button "class="btn btn-large btn-success" onclick=toggleFormSection()>
+                Novo patrimônio
+            </button>
+        </section>
+        <section id="formSection" class="section form-section">
+            <h2>Novo patrimônio</h2>
+            <form id="patrimonioForm">
+                <div class="form-group">
+                    <label for="numeroPatrimonio">Número do patrimônio</label>
+                    <input type="text" id="numeroPatrimonio" placeholder="Escreva o número" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Descreva o patrimônio" required autocomplete="off">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-secondary" onclick="toggleFormSection()">Cancelar</button>
+                </div>
+            </form>
+        </section>
+        <section id="tabelaSection" class="section">
+            <h2>Lista de patrimônios</h2>
+            <div id="patrimonioList" class="patrimonio-list">
+                <p class="empty-message">Nenhum patrimônio registrado.</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p>Controle de patrimônio</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
